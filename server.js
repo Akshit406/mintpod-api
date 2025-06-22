@@ -6,6 +6,7 @@ const path = require("path");
 
 const app = express();
 const connectDB = require("./config/db");
+const collectionRoutes = require("./routes/collectionRoutes");
 
 // middleware to handle cors
 app.use(
@@ -23,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 // nft routes
-app.use('/api/v1/collections', collectionRoutes);
+app.use('/api/v1/collections', collectionRoutes );
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, ()=>{
